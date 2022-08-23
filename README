@@ -26,7 +26,7 @@ In that example we've specified a new option by 'CLOptionBuilder' with
 name 'help'. This option needs an argument (.hasArg()) and it has a
 description
 
-Than you can pass String array received from the user to parser:
+Then you can pass String array received from the user to parser:
     public static void main(String[] agrs) {
         ...
         par.processInput(args);
