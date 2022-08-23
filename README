@@ -1,0 +1,36 @@
+Command line parser
+===================
+This project has made for educational purposes. You may do whatever you
+want with it.
+
+Description
+===========
+Simple command line parser for my future projects
+
+Usage
+=====
+An object of class 'CLArgsParser' has three collections:
+    possibleOptions -   contains avaible options
+    receivedOptions -   contains options set by application user
+    arguments       -   contains rest arguments
+
+You may specify which option should process your application by this
+command:
+    CLArgsParser par = new CLArgsParser();
+    par.addPossibleOption(new CLOptionBuilder()
+            .name("help")
+            .hasArg()
+            .description("Print help page")
+            .buildCLOption());
+In that example we've specified a new option by 'CLOptionBuilder' with
+name 'help'. This option needs an argument (.hasArg()) and it has a
+description
+
+Than you can pass String array received from the user to parser:
+    public static void main(String[] agrs) {
+        ...
+        par.processInput(args);
+        ...
+    }
+Now you can invoke .getReceived() to get all received options and/or
+.getArguments to get all received arguments (which are not options)
